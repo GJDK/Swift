@@ -9,7 +9,12 @@
 import UIKit
 
 class HomeViewController: UIViewController {
-
+    
+    //MARK:IBOutlets
+    @IBOutlet weak var getTemperatureButton: UIButton!
+    
+    @IBOutlet weak var showSavedDataButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,6 +27,13 @@ class HomeViewController: UIViewController {
     }
     
 
+    //MARK: Action Methods
+    @IBAction func getTemperatureButtonTapped(_ sender: Any) {
+    }
+    
+    @IBAction func showSavedDataButtonTapped(_ sender: Any) {
+    }
+    
     /*
     // MARK: - Navigation
 

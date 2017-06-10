@@ -8,22 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		2652A5FE1EEBAF5A00BEBB97 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2652A5FD1EEBAF5A00BEBB97 /* AppDelegate.swift */; };
-		2652A6001EEBAF5A00BEBB97 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2652A5FF1EEBAF5A00BEBB97 /* ViewController.swift */; };
 		2652A6031EEBAF5A00BEBB97 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2652A6011EEBAF5A00BEBB97 /* Main.storyboard */; };
 		2652A6061EEBAF5A00BEBB97 /* GJDKWeatherAppSwift.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2652A6041EEBAF5A00BEBB97 /* GJDKWeatherAppSwift.xcdatamodeld */; };
 		2652A6081EEBAF5A00BEBB97 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2652A6071EEBAF5A00BEBB97 /* Assets.xcassets */; };
 		2652A60B1EEBAF5A00BEBB97 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2652A6091EEBAF5A00BEBB97 /* LaunchScreen.storyboard */; };
+		2652A6141EEBB98000BEBB97 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2652A6131EEBB98000BEBB97 /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2652A5FA1EEBAF5A00BEBB97 /* GJDKWeatherAppSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GJDKWeatherAppSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2652A5FD1EEBAF5A00BEBB97 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2652A5FF1EEBAF5A00BEBB97 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2652A6021EEBAF5A00BEBB97 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2652A6051EEBAF5A00BEBB97 /* GJDKWeatherAppSwift.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GJDKWeatherAppSwift.xcdatamodel; sourceTree = "<group>"; };
 		2652A6071EEBAF5A00BEBB97 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2652A60A1EEBAF5A00BEBB97 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2652A60C1EEBAF5A00BEBB97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2652A6131EEBB98000BEBB97 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,8 +56,8 @@
 		2652A5FC1EEBAF5A00BEBB97 /* GJDKWeatherAppSwift */ = {
 			isa = PBXGroup;
 			children = (
+				2652A6151EEBB98900BEBB97 /* Controllers */,
 				2652A5FD1EEBAF5A00BEBB97 /* AppDelegate.swift */,
-				2652A5FF1EEBAF5A00BEBB97 /* ViewController.swift */,
 				2652A6011EEBAF5A00BEBB97 /* Main.storyboard */,
 				2652A6071EEBAF5A00BEBB97 /* Assets.xcassets */,
 				2652A6091EEBAF5A00BEBB97 /* LaunchScreen.storyboard */,
@@ -65,6 +65,14 @@
 				2652A6041EEBAF5A00BEBB97 /* GJDKWeatherAppSwift.xcdatamodeld */,
 			);
 			path = GJDKWeatherAppSwift;
+			sourceTree = "<group>";
+		};
+		2652A6151EEBB98900BEBB97 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				2652A6131EEBB98000BEBB97 /* HomeViewController.swift */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,8 +148,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				2652A6061EEBAF5A00BEBB97 /* GJDKWeatherAppSwift.xcdatamodeld in Sources */,
-				2652A6001EEBAF5A00BEBB97 /* ViewController.swift in Sources */,
 				2652A5FE1EEBAF5A00BEBB97 /* AppDelegate.swift in Sources */,
+				2652A6141EEBB98000BEBB97 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,6 +311,7 @@
 				2652A6111EEBAF5A00BEBB97 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

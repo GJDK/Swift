@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController, UITextFieldDelegate {
     
     //MARK:IBOutlets
     @IBOutlet weak var getTemperatureButton: UIButton!
@@ -32,6 +32,11 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func showSavedDataButtonTapped(_ sender: Any) {
+    }
+    
+    //MARK: Text Field Delegate Methods
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        print("Hi")
     }
     
     /*

@@ -26,7 +26,15 @@ class WebServiceManager {
             } else {
                 let weatherInfo = try? JSONSerialization.jsonObject(with: data!, options: []) as! Dictionary<String, Any>
                 print(weatherInfo!)
-                weatherDetailsBlock(weatherInfo)
+                
+                let cityNameFromWeatherInfo = weatherInfo!["name"] as! String
+                let temperature = (weatherInfo!["main"] as! Dictionary<String, Any>)["temp"] as! Double
+                let cityId = weatherInfo!["id"] as! Double
+                
+                let weatherDetails = ["cityName" : cityNameFromWeatherInfo, "temperature" : temperature, "cityId" : cityId] as [String : Any]
+                print(weatherDetails)
+                
+                weatherDetailsBlock(weatherDetails)
             }
         }
         dataTask.resume()

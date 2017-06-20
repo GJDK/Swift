@@ -14,6 +14,7 @@
 		2652A60B1EEBAF5A00BEBB97 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2652A6091EEBAF5A00BEBB97 /* LaunchScreen.storyboard */; };
 		2652A6141EEBB98000BEBB97 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2652A6131EEBB98000BEBB97 /* HomeViewController.swift */; };
 		718352251EF92A75009F77A5 /* WebServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718352241EF92A75009F77A5 /* WebServiceManager.swift */; };
+		718352291EF9441D009F77A5 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718352281EF9441D009F77A5 /* ResultViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		2652A60C1EEBAF5A00BEBB97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2652A6131EEBB98000BEBB97 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		718352241EF92A75009F77A5 /* WebServiceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebServiceManager.swift; sourceTree = "<group>"; };
+		718352281EF9441D009F77A5 /* ResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				2652A6131EEBB98000BEBB97 /* HomeViewController.swift */,
+				718352281EF9441D009F77A5 /* ResultViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -158,6 +161,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				718352291EF9441D009F77A5 /* ResultViewController.swift in Sources */,
 				718352251EF92A75009F77A5 /* WebServiceManager.swift in Sources */,
 				2652A6061EEBAF5A00BEBB97 /* GJDKWeatherAppSwift.xcdatamodeld in Sources */,
 				2652A5FE1EEBAF5A00BEBB97 /* AppDelegate.swift in Sources */,

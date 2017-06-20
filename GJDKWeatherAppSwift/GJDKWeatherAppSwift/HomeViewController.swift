@@ -17,6 +17,9 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var cityNameTextField: UITextField!
     
+    //MARK:Members
+    var weatherDeatils : Dictionary<String, Any>?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -28,6 +31,14 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    //MARK: Custom Methods
+    func intiateSegue(weatherResults: Dictionary<String, Any>) -> Void {
+        weatherDeatils = weatherResults
+        let operationQueue = OperationQueue.main
+        operationQueue.addOperation {
+            self.performSegue(withIdentifier: "resultSegue", sender: self)
+        }
+    }
 
     //MARK: Action Methods
     @IBAction func getTemperatureButtonTapped(_ sender: Any) {
@@ -35,6 +46,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
         let webServiceManager = WebServiceManager.sharedWebServiceManagerInstance
         webServiceManager.getWeatherDetails(forTheCity: cityNameTextField.text!) { (WeatherInfo) in
             print(WeatherInfo!)
+            self.intiateSegue(weatherResults: WeatherInfo!)
         }
     }
     
@@ -42,10 +54,6 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
     }
     
     //MARK: Text Field Delegate Methods
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        print("Hi")
-    }
-    
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         if string.characters.count > 0 {
             getTemperatureButton.isEnabled = true
@@ -55,14 +63,18 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     
-    /*
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "resultSegue" {
+            let resultViewCoontroller = segue.destination as! ResultViewController
+            if let weatherInfo = weatherDeatils {
+                if (weatherInfo.count) > 0 {
+                    resultViewCoontroller.weatherDetails = weatherInfo
+                }
+            } else {
+                resultViewCoontroller.weatherDetails = nil
+            }
+        }
     }
-    */
-
 }

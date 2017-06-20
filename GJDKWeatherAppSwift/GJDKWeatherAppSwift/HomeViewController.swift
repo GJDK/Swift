@@ -15,6 +15,8 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var showSavedDataButton: UIButton!
     
+    @IBOutlet weak var cityNameTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -29,6 +31,11 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
 
     //MARK: Action Methods
     @IBAction func getTemperatureButtonTapped(_ sender: Any) {
+        cityNameTextField.resignFirstResponder()
+        let webServiceManager = WebServiceManager.sharedWebServiceManagerInstance
+        webServiceManager.getWeatherDetails(forTheCity: cityNameTextField.text!) { (WeatherInfo) in
+            print(WeatherInfo!)
+        }
     }
     
     @IBAction func showSavedDataButtonTapped(_ sender: Any) {

@@ -92,6 +92,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="LXS-5v-FcX"/>
                     <connections>
+                        <outlet property="cityNameTextField" destination="zhp-9y-OYq" id="pTl-2t-ZW1"/>
                         <outlet property="getTemperatureButton" destination="X0j-qO-7Ye" id="zGG-7W-56P"/>
                         <outlet property="showSavedDataButton" destination="gUm-GJ-rK4" id="nOh-dT-qq3"/>
                     </connections>

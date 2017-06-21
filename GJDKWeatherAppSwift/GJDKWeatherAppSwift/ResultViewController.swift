@@ -35,9 +35,9 @@ class ResultViewController: UIViewController {
     func updateValues() -> Void {
         if let weatherInfo = weatherDetails {
             if weatherInfo.count > 0 {
-                cityNameLabel.text = weatherInfo["cityName"] as? String
-                let temperature = weatherInfo["temperature"] as? Double
-                temperatureLabel.text = String(format: "%.1f", temperature!)
+                cityNameLabel.text = (weatherInfo["cityName"] as! String)
+                let temperature = (weatherInfo["temperature"] as! Double)
+                temperatureLabel.text = String(format: "%.1f", temperature)
             }
         }
     }

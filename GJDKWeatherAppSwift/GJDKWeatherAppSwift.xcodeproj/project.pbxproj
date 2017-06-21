@@ -16,6 +16,7 @@
 		718352251EF92A75009F77A5 /* WebServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718352241EF92A75009F77A5 /* WebServiceManager.swift */; };
 		718352291EF9441D009F77A5 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718352281EF9441D009F77A5 /* ResultViewController.swift */; };
 		71C264971EFA3DAA00D81810 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C264961EFA3DAA00D81810 /* BaseViewController.swift */; };
+		71C2649A1EFA6BBC00D81810 /* WeatherUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C264991EFA6BBC00D81810 /* WeatherUtility.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		718352241EF92A75009F77A5 /* WebServiceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebServiceManager.swift; sourceTree = "<group>"; };
 		718352281EF9441D009F77A5 /* ResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		71C264961EFA3DAA00D81810 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		71C264991EFA6BBC00D81810 /* WeatherUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherUtility.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 		2652A5FC1EEBAF5A00BEBB97 /* GJDKWeatherAppSwift */ = {
 			isa = PBXGroup;
 			children = (
+				71C264981EFA6B9500D81810 /* Managers */,
 				718352231EF92A23009F77A5 /* Helpers */,
 				2652A6151EEBB98900BEBB97 /* Controllers */,
 				2652A5FD1EEBAF5A00BEBB97 /* AppDelegate.swift */,
@@ -87,9 +90,17 @@
 		718352231EF92A23009F77A5 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				718352241EF92A75009F77A5 /* WebServiceManager.swift */,
+				71C264991EFA6BBC00D81810 /* WeatherUtility.swift */,
 			);
 			name = Helpers;
+			sourceTree = "<group>";
+		};
+		71C264981EFA6B9500D81810 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				718352241EF92A75009F77A5 /* WebServiceManager.swift */,
+			);
+			name = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -168,6 +179,7 @@
 				718352251EF92A75009F77A5 /* WebServiceManager.swift in Sources */,
 				2652A6061EEBAF5A00BEBB97 /* GJDKWeatherAppSwift.xcdatamodeld in Sources */,
 				2652A5FE1EEBAF5A00BEBB97 /* AppDelegate.swift in Sources */,
+				71C2649A1EFA6BBC00D81810 /* WeatherUtility.swift in Sources */,
 				2652A6141EEBB98000BEBB97 /* HomeViewController.swift in Sources */,
 				71C264971EFA3DAA00D81810 /* BaseViewController.swift in Sources */,
 			);

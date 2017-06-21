@@ -21,9 +21,9 @@ class BaseViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func convertToCelsius(fromKelvin kelvin : Float) -> Float {
+    func convertToCelsius(fromKelvin kelvin : Double) -> String {
         let celsius = kelvin - 273.15
-        return celsius
+        return String(format: "%.1f c", celsius)
     }
     
 

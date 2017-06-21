@@ -36,9 +36,8 @@ class ResultViewController: BaseViewController {
         if let weatherInfo = weatherDetails {
             if weatherInfo.count > 0 {
                 cityNameLabel.text = (weatherInfo["cityName"] as! String)
-                let tempertur = (weatherInfo["temperature"] as! Double)
-                let temperature = convertToCelsius(fromKelvin: Float(tempertur))
-                temperatureLabel.text = String(format: "%.1f", temperature)
+                let temperature = weatherInfo["temperature"] as! Double
+                temperatureLabel.text = convertToCelsius(fromKelvin: temperature)
             }
         }
     }

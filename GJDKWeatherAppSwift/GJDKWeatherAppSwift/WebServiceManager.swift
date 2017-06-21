@@ -13,7 +13,7 @@ let BaseUrl = "http://api.openweathermap.org/data/2.5/weather?q=%@&appid=8726c36
 class WebServiceManager {
     static let sharedWebServiceManagerInstance = WebServiceManager()
     
-    func getWeatherDetails(forTheCity cityName : String, withCompletionHandler weatherDetailsBlock : @escaping (_ result : Dictionary<String, Any>?) -> Void) -> Void {
+    func getWeatherDetails(forTheCity cityName : String, withCompletionHandler weatherDetailsBlock : @escaping (_ result : Dictionary<String, Any>?, _ error : Error?) -> Void) -> Void {
         
         let urlSessionConfiguration = URLSessionConfiguration.default
         let session = URLSession(configuration: urlSessionConfiguration)
@@ -27,14 +27,19 @@ class WebServiceManager {
                 let weatherInfo = try? JSONSerialization.jsonObject(with: data!, options: []) as! Dictionary<String, Any>
                 print(weatherInfo!)
                 
-                let cityNameFromWeatherInfo = weatherInfo!["name"] as! String
-                let temperature = (weatherInfo!["main"] as! Dictionary<String, Any>)["temp"] as! Double
-                let cityId = weatherInfo!["id"] as! Double
+                let cityNameFromWeatherInfo = weatherInfo?["name"]
+                let temperature = (weatherInfo?["main"] as! Dictionary<String, Any>)["temp"]
+                let cityId = weatherInfo?["id"]
                 
-                let weatherDetails = ["cityName" : cityNameFromWeatherInfo, "temperature" : temperature, "cityId" : cityId] as [String : Any]
-                print(weatherDetails)
+                var weatherDetails = [String : Any]()
                 
-                weatherDetailsBlock(weatherDetails)
+                guard cityNameFromWeatherInfo != nil else { weatherDetailsBlock(nil, ServiceFailure.CityNameNotFound); return }
+                guard temperature != nil else { weatherDetailsBlock(nil, ServiceFailure.TemperatureNotFound); return }
+                guard cityId != nil else { weatherDetailsBlock(nil, ServiceFailure.CityIdNotFound); return }
+                
+                weatherDetails = ["cityName" : cityNameFromWeatherInfo!, "temperature" : temperature!, "cityId" : cityId!]
+                                
+                weatherDetailsBlock(weatherDetails, nil)
             }
         }
         dataTask.resume()

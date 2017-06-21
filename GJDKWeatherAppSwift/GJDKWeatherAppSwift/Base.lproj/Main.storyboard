@@ -116,7 +116,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="srP-SV-NR4">
-                                <rect key="frame" x="56" y="100" width="39.5" height="25"/>
+                                <rect key="frame" x="56" y="144" width="39.5" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="0vT-DF-5Yi"/>
                                 </constraints>
@@ -125,7 +125,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Temperature :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6o4-Li-w1f">
-                                <rect key="frame" x="56" y="175" width="107" height="25"/>
+                                <rect key="frame" x="56" y="219" width="107" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="Ccg-lc-Yzk"/>
                                 </constraints>
@@ -134,7 +134,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f9O-bV-ccJ">
-                                <rect key="frame" x="125.5" y="100.5" width="42" height="25"/>
+                                <rect key="frame" x="125.5" y="144.5" width="42" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="uG6-lT-oBY"/>
                                 </constraints>
@@ -143,7 +143,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f9S-n3-453">
-                                <rect key="frame" x="193" y="175" width="42" height="25"/>
+                                <rect key="frame" x="193" y="219" width="42" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="6pj-D3-sZs"/>
                                 </constraints>
@@ -151,14 +151,23 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="abM-Jh-7NV">
+                                <rect key="frame" x="152.5" y="294" width="69" height="30"/>
+                                <state key="normal" title="Save Data"/>
+                                <connections>
+                                    <action selector="saveDataButtonTapped:" destination="7uW-hf-l48" eventType="touchUpInside" id="4Zm-5T-Fmy"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="f9S-n3-453" firstAttribute="centerY" secondItem="6o4-Li-w1f" secondAttribute="centerY" id="5wD-ba-kIs"/>
                             <constraint firstItem="f9O-bV-ccJ" firstAttribute="centerY" secondItem="srP-SV-NR4" secondAttribute="centerY" id="Frv-af-KPe"/>
+                            <constraint firstItem="abM-Jh-7NV" firstAttribute="top" secondItem="f9S-n3-453" secondAttribute="bottom" constant="50" id="JYG-13-BGo"/>
                             <constraint firstItem="srP-SV-NR4" firstAttribute="top" secondItem="1OV-h7-Mxl" secondAttribute="bottom" constant="80" id="OXN-ve-5rh"/>
                             <constraint firstItem="6o4-Li-w1f" firstAttribute="leading" secondItem="srP-SV-NR4" secondAttribute="leading" id="TdZ-vQ-5qI"/>
                             <constraint firstItem="f9S-n3-453" firstAttribute="leading" secondItem="6o4-Li-w1f" secondAttribute="trailing" constant="30" id="XHy-z1-xy6"/>
+                            <constraint firstItem="abM-Jh-7NV" firstAttribute="centerX" secondItem="Dk7-9Z-gws" secondAttribute="centerX" id="YM9-mG-cq2"/>
                             <constraint firstItem="6o4-Li-w1f" firstAttribute="top" secondItem="srP-SV-NR4" secondAttribute="bottom" constant="50" id="etC-wc-lzu"/>
                             <constraint firstItem="f9O-bV-ccJ" firstAttribute="leading" secondItem="srP-SV-NR4" secondAttribute="trailing" constant="30" id="gHg-qR-vY7"/>
                             <constraint firstItem="srP-SV-NR4" firstAttribute="leading" secondItem="Dk7-9Z-gws" secondAttribute="leadingMargin" constant="40" id="qfj-f5-vwR"/>

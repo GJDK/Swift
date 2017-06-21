@@ -15,7 +15,6 @@ class ResultViewController: BaseViewController {
     @IBOutlet weak var cityNameLabel: UILabel!
     @IBOutlet weak var temperatureLabel: UILabel!
     
-    
     //MARK: Members
     var weatherDetails : Dictionary<String, Any>?
     
@@ -40,6 +39,10 @@ class ResultViewController: BaseViewController {
                 temperatureLabel.text = convertToCelsius(fromKelvin: temperature)
             }
         }
+    }
+    
+    //MARK: IBAction Methods
+    @IBAction func saveDataButtonTapped(_ sender: Any) {
     }
 
     /*

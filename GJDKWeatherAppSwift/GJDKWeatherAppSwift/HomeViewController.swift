@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeViewController: UIViewController, UITextFieldDelegate {
+class HomeViewController: BaseViewController, UITextFieldDelegate {
     
     //MARK:IBOutlets
     @IBOutlet weak var getTemperatureButton: UIButton!

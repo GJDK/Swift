@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ResultViewController: UIViewController {
+class ResultViewController: BaseViewController {
     
     //MARK: IBOutlets
 
@@ -36,7 +36,8 @@ class ResultViewController: UIViewController {
         if let weatherInfo = weatherDetails {
             if weatherInfo.count > 0 {
                 cityNameLabel.text = (weatherInfo["cityName"] as! String)
-                let temperature = (weatherInfo["temperature"] as! Double)
+                let tempertur = (weatherInfo["temperature"] as! Double)
+                let temperature = convertToCelsius(fromKelvin: Float(tempertur))
                 temperatureLabel.text = String(format: "%.1f", temperature)
             }
         }

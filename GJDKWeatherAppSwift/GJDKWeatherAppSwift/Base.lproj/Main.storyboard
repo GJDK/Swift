@@ -69,7 +69,6 @@
                                 <state key="normal" title="Get Temperature"/>
                                 <connections>
                                     <action selector="getTemperatureButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sQl-Iw-UJL"/>
-                                    <segue destination="7uW-hf-l48" kind="show" identifier="resultSegue" id="GAa-u2-POm"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gUm-GJ-rK4">
@@ -97,6 +96,7 @@
                         <outlet property="cityNameTextField" destination="zhp-9y-OYq" id="pTl-2t-ZW1"/>
                         <outlet property="getTemperatureButton" destination="X0j-qO-7Ye" id="zGG-7W-56P"/>
                         <outlet property="showSavedDataButton" destination="gUm-GJ-rK4" id="nOh-dT-qq3"/>
+                        <segue destination="7uW-hf-l48" kind="show" identifier="resultSegue" id="2RK-5d-C8n"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

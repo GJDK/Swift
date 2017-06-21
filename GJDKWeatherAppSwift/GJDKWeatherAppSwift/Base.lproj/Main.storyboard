@@ -176,11 +176,30 @@
                     <connections>
                         <outlet property="cityNameLabel" destination="f9O-bV-ccJ" id="5nG-r4-F8P"/>
                         <outlet property="temperatureLabel" destination="f9S-n3-453" id="dih-hh-Swi"/>
+                        <segue destination="JhH-YQ-nn0" kind="show" identifier="DetailSegue" id="pXe-0j-37Y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NEu-pk-xDh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="481" y="10"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="Ypc-hr-QB5">
+            <objects>
+                <viewController id="JhH-YQ-nn0" customClass="DetailViewController" customModule="GJDKWeatherAppSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="UZN-lR-aIa"/>
+                        <viewControllerLayoutGuide type="bottom" id="TwZ-le-Kjs"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8CC-Xv-Xiy">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Onb-mh-ila" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1204" y="5"/>
         </scene>
     </scenes>
 </document>

@@ -17,6 +17,7 @@
 		718352291EF9441D009F77A5 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718352281EF9441D009F77A5 /* ResultViewController.swift */; };
 		71C264971EFA3DAA00D81810 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C264961EFA3DAA00D81810 /* BaseViewController.swift */; };
 		71C2649A1EFA6BBC00D81810 /* WeatherUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C264991EFA6BBC00D81810 /* WeatherUtility.swift */; };
+		71C264A21EFA867900D81810 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C264A11EFA867900D81810 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		718352281EF9441D009F77A5 /* ResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		71C264961EFA3DAA00D81810 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		71C264991EFA6BBC00D81810 /* WeatherUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherUtility.swift; sourceTree = "<group>"; };
+		71C264A11EFA867900D81810 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 				2652A6131EEBB98000BEBB97 /* HomeViewController.swift */,
 				718352281EF9441D009F77A5 /* ResultViewController.swift */,
 				71C264961EFA3DAA00D81810 /* BaseViewController.swift */,
+				71C264A11EFA867900D81810 /* DetailViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -182,6 +185,7 @@
 				71C2649A1EFA6BBC00D81810 /* WeatherUtility.swift in Sources */,
 				2652A6141EEBB98000BEBB97 /* HomeViewController.swift in Sources */,
 				71C264971EFA3DAA00D81810 /* BaseViewController.swift in Sources */,
+				71C264A21EFA867900D81810 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -69,7 +69,7 @@
                                 <state key="normal" title="Get Temperature"/>
                                 <connections>
                                     <action selector="getTemperatureButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sQl-Iw-UJL"/>
-                                    <segue destination="7uW-hf-l48" kind="showDetail" identifier="resultSegue" id="jQr-6c-ze2"/>
+                                    <segue destination="7uW-hf-l48" kind="show" identifier="resultSegue" id="GAa-u2-POm"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gUm-GJ-rK4">

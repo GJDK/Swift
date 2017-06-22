@@ -186,7 +186,7 @@
         <!--Detail View Controller-->
         <scene sceneID="Ypc-hr-QB5">
             <objects>
-                <viewController id="JhH-YQ-nn0" customClass="DetailViewController" customModule="GJDKWeatherAppSwift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="JhH-YQ-nn0" customClass="DetailViewController" customModule="GJDKWeatherAppSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="UZN-lR-aIa"/>
                         <viewControllerLayoutGuide type="bottom" id="TwZ-le-Kjs"/>
@@ -194,8 +194,61 @@
                     <view key="view" contentMode="scaleToFill" id="8CC-Xv-Xiy">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xy3-bB-fXX">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CitiesWeatherDetailsCell" id="dxP-0B-RZz" customClass="WeatherDetailsTableViewCell" customModule="GJDKWeatherAppSwift" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dxP-0B-RZz" id="kJV-12-6f5">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eOY-8I-og0">
+                                                    <rect key="frame" x="13" y="11" width="30.5" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Temperature" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Et0-jg-DXs">
+                                                    <rect key="frame" x="266" y="11" width="98" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Et0-jg-DXs" secondAttribute="trailing" constant="3" id="Jae-Xs-Uhc"/>
+                                                <constraint firstItem="eOY-8I-og0" firstAttribute="leading" secondItem="kJV-12-6f5" secondAttribute="leadingMargin" constant="5" id="o6x-gn-xUj"/>
+                                                <constraint firstItem="eOY-8I-og0" firstAttribute="centerY" secondItem="kJV-12-6f5" secondAttribute="centerY" id="pPb-lV-ET2"/>
+                                                <constraint firstItem="Et0-jg-DXs" firstAttribute="centerY" secondItem="kJV-12-6f5" secondAttribute="centerY" id="rwn-GN-1Jx"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="cityName" destination="eOY-8I-og0" id="Zl5-Yb-wFc"/>
+                                            <outlet property="temperature" destination="Et0-jg-DXs" id="J1X-H1-g6W"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="JhH-YQ-nn0" id="dJV-H3-rRa"/>
+                                    <outlet property="delegate" destination="JhH-YQ-nn0" id="bFU-vC-PDd"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="xy3-bB-fXX" secondAttribute="trailing" id="MUw-tf-wLr"/>
+                            <constraint firstItem="xy3-bB-fXX" firstAttribute="top" secondItem="UZN-lR-aIa" secondAttribute="bottom" id="XkZ-3w-lVa"/>
+                            <constraint firstItem="TwZ-le-Kjs" firstAttribute="top" secondItem="xy3-bB-fXX" secondAttribute="bottom" id="aEe-CK-VoR"/>
+                            <constraint firstItem="xy3-bB-fXX" firstAttribute="leading" secondItem="8CC-Xv-Xiy" secondAttribute="leading" id="csC-YN-kfb"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="weatherDetailsTableView" destination="xy3-bB-fXX" id="1JB-g0-YMB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Onb-mh-ila" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

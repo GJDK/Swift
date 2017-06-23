@@ -53,7 +53,7 @@ class ResultViewController: BaseViewController {
             let weatherDetails = WeatherDetails(context: appDelegate.persistentContainer.viewContext)
             weatherDetails.cityId = String(self.weatherDetails!["cityId"]! as! Double)
             weatherDetails.cityName = (self.weatherDetails!["cityName"]! as! String)
-            weatherDetails.temperature = String(self.weatherDetails!["temperature"]! as! Double)
+            weatherDetails.temperature = convertToCelsius(String(self.weatherDetails!["temperature"]! as! Double))
             appDelegate.saveContext()
             performSegue(withIdentifier: "DetailSegue", sender: self)
         }

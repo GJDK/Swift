@@ -122,10 +122,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if let savedWeatherDetails = savedData {
             cityIds = []
             for cityDetail in savedWeatherDetails {
+                if let dotRange = cityDetail.cityId!.range(of: ".") {
+                    cityDetail.cityId!.removeSubrange(dotRange.lowerBound..<cityDetail.cityId!.endIndex)
+                }
                 cityIds?.append(cityDetail.cityId!)
             }
         }
         return cityIds
+    }
+    
+    func deleteAllRecords() -> Void {
+        let managedObjectContext = persistentContainer.viewContext
+//        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "WeatherDetails")
+//        let deleteRequest = NSBatchDeleteRequest.init(fetchRequest: fetchRequest)
+        let savedData = fetchSavedData()
+        for managedObject in savedData! {
+            managedObjectContext.delete(managedObject)
+        }
+        do {
+            try managedObjectContext.save()
+        } catch let error as NSError {
+            print(error)
+        }
     }
 }
 

@@ -68,7 +68,7 @@
 		2652A5FC1EEBAF5A00BEBB97 /* GJDKWeatherAppSwift */ = {
 			isa = PBXGroup;
 			children = (
-				71B716D91EFB8B860050361A /* TableViewCells */,
+				71B716DC1EFBA0A30050361A /* View */,
 				71C264981EFA6B9500D81810 /* Managers */,
 				718352231EF92A23009F77A5 /* Helpers */,
 				2652A6151EEBB98900BEBB97 /* Controllers */,
@@ -109,10 +109,34 @@
 			name = TableViewCells;
 			sourceTree = "<group>";
 		};
-		71C264981EFA6B9500D81810 /* Managers */ = {
+		71B716DC1EFBA0A30050361A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				71B716D91EFB8B860050361A /* TableViewCells */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		71B716DD1EFBA0AE0050361A /* WebServiceManager */ = {
 			isa = PBXGroup;
 			children = (
 				718352241EF92A75009F77A5 /* WebServiceManager.swift */,
+			);
+			name = WebServiceManager;
+			sourceTree = "<group>";
+		};
+		71B716DE1EFBA0BD0050361A /* DatabaseManager */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = DatabaseManager;
+			sourceTree = "<group>";
+		};
+		71C264981EFA6B9500D81810 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				71B716DE1EFBA0BD0050361A /* DatabaseManager */,
+				71B716DD1EFBA0AE0050361A /* WebServiceManager */,
 			);
 			name = Managers;
 			sourceTree = "<group>";
@@ -321,6 +345,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = GJDKWeatherAppSwift/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.prokarma.GJDKWeatherAppSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -333,6 +358,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = GJDKWeatherAppSwift/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.prokarma.GJDKWeatherAppSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";

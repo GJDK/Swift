@@ -43,8 +43,13 @@ class ResultViewController: BaseViewController {
     
     //MARK: IBAction Methods
     @IBAction func saveDataButtonTapped(_ sender: Any) {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let weatherDetails = WeatherDetails(context: appDelegate.persistentContainer.viewContext)
+        weatherDetails.cityId = String(self.weatherDetails!["cityId"]! as! Double)
+        weatherDetails.cityName = (self.weatherDetails!["cityName"]! as! String)
+        weatherDetails.temperature = String(self.weatherDetails!["temperature"]! as! Double)
+        appDelegate.saveContext()
         performSegue(withIdentifier: "DetailSegue", sender: self)
-        
     }
 
     // MARK: - Navigation

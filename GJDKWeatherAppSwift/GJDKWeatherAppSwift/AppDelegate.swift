@@ -74,7 +74,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }()
 
     // MARK: - Core Data Saving support
-
     func saveContext () {
         let context = persistentContainer.viewContext
         if context.hasChanges {
@@ -88,6 +87,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
     }
-
+    
+    func fetchSavedData() -> Array<WeatherDetails>? {
+        var weatherDetailsArray : [WeatherDetails]?
+        
+        let managedObjectContext = persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<WeatherDetails>(entityName: "WeatherDetails")
+        do {
+            try weatherDetailsArray = managedObjectContext.fetch(fetchRequest) as [WeatherDetails]
+        } catch let error as NSError {
+            print("\(error), \(error.localizedDescription)")
+            return weatherDetailsArray
+        }
+        return weatherDetailsArray
+    }
 }
 

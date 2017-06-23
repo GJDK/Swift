@@ -11,7 +11,7 @@ import UIKit
 class DetailViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
     
     //MARK: Members
-    var citiesWeatherDetails = ["city1", "city1", "city1", "city1"]
+    var citiesWeatherDetails = [WeatherDetails]()
     
     //MARK: IBOutlets
     @IBOutlet weak var weatherDetailsTableView: UITableView!
@@ -20,6 +20,7 @@ class DetailViewController: BaseViewController, UITableViewDelegate, UITableView
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         weatherDetailsTableView.tableFooterView = UIView()
+        citiesWeatherDetails = (UIApplication.shared.delegate as! AppDelegate).fetchSavedData()!
     }
 
     override func didReceiveMemoryWarning() {
@@ -32,8 +33,9 @@ class DetailViewController: BaseViewController, UITableViewDelegate, UITableView
         return citiesWeatherDetails.count
     }
     func tableView(_ tableView: UITableView , cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var weatherDetailsCell = tableView.dequeueReusableCell(withIdentifier: "CitiesWeatherDetailsCell") as! WeatherDetailsTableViewCell
-        weatherDetailsCell.cityName.text = citiesWeatherDetails[indexPath.row]
+        let weatherDetailsCell = tableView.dequeueReusableCell(withIdentifier: "CitiesWeatherDetailsCell") as! WeatherDetailsTableViewCell
+        weatherDetailsCell.cityName.text = citiesWeatherDetails[indexPath.row].cityName! as String
+        weatherDetailsCell.temperature.text = citiesWeatherDetails[indexPath.row].temperature! as String
         return weatherDetailsCell
     }
     

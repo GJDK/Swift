@@ -35,7 +35,8 @@ class DetailViewController: BaseViewController, UITableViewDelegate, UITableView
     func tableView(_ tableView: UITableView , cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let weatherDetailsCell = tableView.dequeueReusableCell(withIdentifier: "CitiesWeatherDetailsCell") as! WeatherDetailsTableViewCell
         weatherDetailsCell.cityName.text = citiesWeatherDetails[indexPath.row].cityName! as String
-        weatherDetailsCell.temperature.text = citiesWeatherDetails[indexPath.row].temperature! as String
+        //        weatherDetailsCell.temperature.text = citiesWeatherDetails[indexPath.row].temperature! as String
+        weatherDetailsCell.temperature.text = convertToCelsius(citiesWeatherDetails[indexPath.row].temperature! as String)
         return weatherDetailsCell
     }
     

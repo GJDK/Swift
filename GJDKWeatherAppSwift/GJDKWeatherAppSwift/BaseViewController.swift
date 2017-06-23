@@ -27,6 +27,10 @@ class BaseViewController: UIViewController {
         return String(format: "%.1f c", celsius)
     }
     
+    func convertToCelsius(_ kelvin : String) -> String {
+        let kelvinNumericValue = Double(kelvin)
+        return convertToCelsius(fromKelvin: kelvinNumericValue!)
+    }
 
     /*
     // MARK: - Navigation

@@ -97,6 +97,7 @@
                         <outlet property="getTemperatureButton" destination="X0j-qO-7Ye" id="zGG-7W-56P"/>
                         <outlet property="showSavedDataButton" destination="gUm-GJ-rK4" id="nOh-dT-qq3"/>
                         <segue destination="7uW-hf-l48" kind="show" identifier="resultSegue" id="2RK-5d-C8n"/>
+                        <segue destination="JhH-YQ-nn0" kind="show" identifier="DetailViewSegue" id="kBc-Fn-Xt7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -255,4 +256,7 @@
             <point key="canvasLocation" x="1204" y="5"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="kBc-Fn-Xt7"/>
+    </inferredMetricsTieBreakers>
 </document>

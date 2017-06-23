@@ -54,6 +54,7 @@ class HomeViewController: BaseViewController, UITextFieldDelegate {
     }
     
     @IBAction func showSavedDataButtonTapped(_ sender: Any) {
+        performSegue(withIdentifier: "DetailViewSegue", sender: self)
     }
     
     //MARK: Text Field Delegate Methods
@@ -78,6 +79,9 @@ class HomeViewController: BaseViewController, UITextFieldDelegate {
             } else {
                 resultViewCoontroller.weatherDetails = nil
             }
+        } else if segue.identifier == "DetailViewSegue" {
+            _ = segue.destination as! DetailViewController
+            
         }
     }
 }

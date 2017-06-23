@@ -25,6 +25,15 @@ class HomeViewController: BaseViewController, UITextFieldDelegate {
 
         // Do any additional setup after loading the view.
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        let weatherDetails = (UIApplication.shared.delegate as! AppDelegate).fetchSavedData()
+        if let weatherInfo = weatherDetails {
+            if weatherInfo.count > 0 {
+                showSavedDataButton.isEnabled = true
+            }
+        }
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

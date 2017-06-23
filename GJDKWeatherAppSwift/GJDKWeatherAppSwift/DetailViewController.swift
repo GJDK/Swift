@@ -19,6 +19,11 @@ class DetailViewController: BaseViewController, UITableViewDelegate, UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        //Remove Back Button and customising it
+        self.navigationItem.hidesBackButton = true
+        let backButton = UIBarButtonItem(title: "<Back", style: UIBarButtonItemStyle.plain, target: self, action:#selector(DetailViewController.navigateToPreviousController))
+        self.navigationItem.leftBarButtonItem = backButton
+        
         weatherDetailsTableView.tableFooterView = UIView()
         citiesWeatherDetails = (UIApplication.shared.delegate as! AppDelegate).fetchSavedData()!
     }
@@ -26,6 +31,11 @@ class DetailViewController: BaseViewController, UITableViewDelegate, UITableView
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    //MARK: Custom Methods
+    func navigateToPreviousController() -> Void {
+        _ = self.navigationController?.popToRootViewController(animated: true)
     }
     
     //MARK: TableView Delegate and DataSource Methods

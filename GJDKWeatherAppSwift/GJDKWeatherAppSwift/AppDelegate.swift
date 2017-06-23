@@ -101,5 +101,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         return weatherDetailsArray
     }
+    
+    func isCityAlreadyExists(_ cityId : String) -> Bool {
+        let cities = cityIds()
+        if let cityIds = cities {
+            if cityIds.contains(cityId) {
+                return true
+            } else {
+                return false
+            }
+        } else {
+            return false
+        }
+        
+    }
+    
+    func cityIds() -> [String]? {
+        let savedData = fetchSavedData()
+        var cityIds : [String]?
+        if let savedWeatherDetails = savedData {
+            cityIds = []
+            for cityDetail in savedWeatherDetails {
+                cityIds?.append(cityDetail.cityId!)
+            }
+        }
+        return cityIds
+    }
 }
 

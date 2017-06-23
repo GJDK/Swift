@@ -44,12 +44,19 @@ class ResultViewController: BaseViewController {
     //MARK: IBAction Methods
     @IBAction func saveDataButtonTapped(_ sender: Any) {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let weatherDetails = WeatherDetails(context: appDelegate.persistentContainer.viewContext)
-        weatherDetails.cityId = String(self.weatherDetails!["cityId"]! as! Double)
-        weatherDetails.cityName = (self.weatherDetails!["cityName"]! as! String)
-        weatherDetails.temperature = String(self.weatherDetails!["temperature"]! as! Double)
-        appDelegate.saveContext()
-        performSegue(withIdentifier: "DetailSegue", sender: self)
+        
+        if appDelegate.isCityAlreadyExists(String(self.weatherDetails!["cityId"]! as! Double)) {
+            let alert = UIAlertController(title: "Alert", message: "City Record Already Exists", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        } else {
+            let weatherDetails = WeatherDetails(context: appDelegate.persistentContainer.viewContext)
+            weatherDetails.cityId = String(self.weatherDetails!["cityId"]! as! Double)
+            weatherDetails.cityName = (self.weatherDetails!["cityName"]! as! String)
+            weatherDetails.temperature = String(self.weatherDetails!["temperature"]! as! Double)
+            appDelegate.saveContext()
+            performSegue(withIdentifier: "DetailSegue", sender: self)
+        }
     }
 
     // MARK: - Navigation

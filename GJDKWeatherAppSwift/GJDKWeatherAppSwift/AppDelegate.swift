@@ -103,17 +103,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func isCityAlreadyExists(_ cityId : String) -> Bool {
+        var city = cityId
+        if let dotRange = city.range(of: ".") {
+            city.removeSubrange(dotRange.lowerBound..<city.endIndex)
+        }
         let cities = cityIds()
         if let cityIds = cities {
-            if cityIds.contains(cityId) {
-                return true
-            } else {
-                return false
-            }
+            return isCity(cityId: city, existsIn: cityIds)
         } else {
             return false
         }
-        
     }
     
     func cityIds() -> [String]? {
@@ -143,6 +142,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } catch let error as NSError {
             print(error)
         }
+    }
+    
+    //MARK: Generic Method
+    func isCity<T : Equatable>(cityId : T, existsIn cityIds : [T]) -> Bool {
+        for (_, value) in cityIds.enumerated() {
+            if value == cityId {
+                return true
+            }
+        }
+        return false
     }
 }
 

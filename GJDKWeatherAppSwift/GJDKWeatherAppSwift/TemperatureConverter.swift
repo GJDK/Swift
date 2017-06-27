@@ -18,7 +18,8 @@ struct TemperatureConversion {
     
     subscript(index : String) -> String {
         let temperature = Double(index)
-        let celsius = temperature! - deductionValue
-        return String(format: "%.1f c", celsius)
+//        let celsius = temperature! - deductionValue
+//        return String(format: "%.1f c", celsius)
+        return self[temperature!]
     }
 }

@@ -36,7 +36,9 @@ class ResultViewController: BaseViewController {
             if weatherInfo.count > 0 {
                 cityNameLabel.text = (weatherInfo["cityName"] as! String)
                 let temperature = weatherInfo["temperature"] as! Double
-                temperatureLabel.text = convertToCelsius(fromKelvin: temperature)
+//                temperatureLabel.text = convertToCelsius(fromKelvin: temperature)
+                let temperatureConverter = TemperatureConversion(deductionValue: 273.15)
+                temperatureLabel.text = temperatureConverter[temperature]
             }
         }
     }
@@ -53,7 +55,10 @@ class ResultViewController: BaseViewController {
             let weatherDetails = WeatherDetails(context: appDelegate.persistentContainer.viewContext)
             weatherDetails.cityId = String(self.weatherDetails!["cityId"]! as! Double)
             weatherDetails.cityName = (self.weatherDetails!["cityName"]! as! String)
-            weatherDetails.temperature = convertToCelsius(String(self.weatherDetails!["temperature"]! as! Double))
+            let temperature = (String(self.weatherDetails!["temperature"]! as! Double))
+            let temperatureConverter = TemperatureConversion(deductionValue: 273.15)
+            weatherDetails.temperature = temperatureConverter[temperature]
+//            weatherDetails.temperature = convertToCelsius(String(self.weatherDetails!["temperature"]! as! Double))
             appDelegate.saveContext()
             performSegue(withIdentifier: "DetailSegue", sender: self)
         }

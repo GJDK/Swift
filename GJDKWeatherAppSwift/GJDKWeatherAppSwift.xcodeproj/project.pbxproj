@@ -20,6 +20,7 @@
 		71C264971EFA3DAA00D81810 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C264961EFA3DAA00D81810 /* BaseViewController.swift */; };
 		71C2649A1EFA6BBC00D81810 /* WeatherUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C264991EFA6BBC00D81810 /* WeatherUtility.swift */; };
 		71C264A21EFA867900D81810 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C264A11EFA867900D81810 /* DetailViewController.swift */; };
+		71EB77C51F026005005CE306 /* TemperatureConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71EB77C41F026005005CE306 /* TemperatureConverter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		71C264961EFA3DAA00D81810 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		71C264991EFA6BBC00D81810 /* WeatherUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherUtility.swift; sourceTree = "<group>"; };
 		71C264A11EFA867900D81810 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		71EB77C41F026005005CE306 /* TemperatureConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemperatureConverter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 		2652A5FC1EEBAF5A00BEBB97 /* GJDKWeatherAppSwift */ = {
 			isa = PBXGroup;
 			children = (
+				71EB77C31F025FE6005CE306 /* Utilities */,
 				71B716DC1EFBA0A30050361A /* View */,
 				71C264981EFA6B9500D81810 /* Managers */,
 				718352231EF92A23009F77A5 /* Helpers */,
@@ -142,6 +145,14 @@
 				71B716DD1EFBA0AE0050361A /* WebServiceManager */,
 			);
 			name = Managers;
+			sourceTree = "<group>";
+		};
+		71EB77C31F025FE6005CE306 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				71EB77C41F026005005CE306 /* TemperatureConverter.swift */,
+			);
+			name = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -222,6 +233,7 @@
 				2652A6061EEBAF5A00BEBB97 /* GJDKWeatherAppSwift.xcdatamodeld in Sources */,
 				2652A5FE1EEBAF5A00BEBB97 /* AppDelegate.swift in Sources */,
 				71C2649A1EFA6BBC00D81810 /* WeatherUtility.swift in Sources */,
+				71EB77C51F026005005CE306 /* TemperatureConverter.swift in Sources */,
 				2652A6141EEBB98000BEBB97 /* HomeViewController.swift in Sources */,
 				71C264971EFA3DAA00D81810 /* BaseViewController.swift in Sources */,
 				71C264A21EFA867900D81810 /* DetailViewController.swift in Sources */,

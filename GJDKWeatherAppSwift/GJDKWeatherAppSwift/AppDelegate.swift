@@ -133,8 +133,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func deleteAllRecords() -> Void {
         let managedObjectContext = persistentContainer.viewContext
-//        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "WeatherDetails")
-//        let deleteRequest = NSBatchDeleteRequest.init(fetchRequest: fetchRequest)
+        
         let savedData = fetchSavedData()
         for managedObject in savedData! {
             managedObjectContext.delete(managedObject)

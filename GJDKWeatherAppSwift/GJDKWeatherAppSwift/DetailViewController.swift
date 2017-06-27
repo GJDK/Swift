@@ -60,7 +60,6 @@ class DetailViewController: BaseViewController, UITableViewDelegate, UITableView
             let weatherDetails = WeatherDetails(context: (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext)
             weatherDetails.cityId = String(cityDetail["id"]! as! Double)
             weatherDetails.cityName = (cityDetail["name"] as! String)
-//            weatherDetails.temperature = String((cityDetail["main"] as! Dictionary<String, Any>)["temp"]! as! Double) + " " + "c"
             weatherDetails.temperature = String(format: "%.1f c", (cityDetail["main"] as! Dictionary<String, Any>)["temp"]! as! Double)
             (UIApplication.shared.delegate as! AppDelegate).saveContext()
         }

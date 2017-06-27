@@ -60,20 +60,6 @@ class WebServiceManager {
                 let weatherInfo = try? JSONSerialization.jsonObject(with: data!, options: []) as! Dictionary<String, Any>
                 print(weatherInfo!)
                 refreshedWeatherDeatilsBlock(weatherInfo , nil)
-                
-//                let cityNameFromWeatherInfo = weatherInfo?["name"]
-//                let temperature = (weatherInfo?["main"] as! Dictionary<String, Any>)["temp"]
-//                let cityId = weatherInfo?["id"]
-//                
-//                var weatherDetails = [String : Any]()
-//                
-//                guard cityNameFromWeatherInfo != nil else { refreshedWeatherDeatilsBlock(nil, ServiceFailure.CityNameNotFound); return }
-//                guard temperature != nil else { refreshedWeatherDeatilsBlock(nil, ServiceFailure.TemperatureNotFound); return }
-//                guard cityId != nil else { refreshedWeatherDeatilsBlock(nil, ServiceFailure.CityIdNotFound); return }
-//                
-//                weatherDetails = ["cityName" : cityNameFromWeatherInfo!, "temperature" : temperature!, "cityId" : cityId!]
-                
-                
             }
         }
         dataTask.resume()

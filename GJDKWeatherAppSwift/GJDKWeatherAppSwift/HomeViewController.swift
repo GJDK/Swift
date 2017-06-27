@@ -77,7 +77,6 @@ class HomeViewController: BaseViewController, UITextFieldDelegate {
     }
     
     // MARK: - Navigation
-     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "resultSegue" {
             let resultViewCoontroller = segue.destination as! ResultViewController

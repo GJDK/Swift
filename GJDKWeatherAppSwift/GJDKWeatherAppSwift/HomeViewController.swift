@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeViewController: BaseViewController, UITextFieldDelegate {
+class HomeViewController: BaseViewController {
     
     //MARK:IBOutlets
     @IBOutlet weak var getTemperatureButton: UIButton!
@@ -66,16 +66,6 @@ class HomeViewController: BaseViewController, UITextFieldDelegate {
         performSegue(withIdentifier: "DetailViewSegue", sender: self)
     }
     
-    //MARK: Text Field Delegate Methods
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        if string.characters.count > 0 {
-            getTemperatureButton.isEnabled = true
-        } else if textField.text?.characters.count == 1 {
-            getTemperatureButton.isEnabled = false
-        }
-        return true
-    }
-    
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "resultSegue" {
@@ -91,5 +81,17 @@ class HomeViewController: BaseViewController, UITextFieldDelegate {
             _ = segue.destination as! DetailViewController
             
         }
+    }
+}
+
+extension HomeViewController : UITextFieldDelegate {
+    //MARK: Text Field Delegate Methods
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if string.characters.count > 0 {
+            getTemperatureButton.isEnabled = true
+        } else if textField.text?.characters.count == 1 {
+            getTemperatureButton.isEnabled = false
+        }
+        return true
     }
 }

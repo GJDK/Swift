@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DetailViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
+class DetailViewController: BaseViewController {
     
     //MARK: Members
     var citiesWeatherDetails = [WeatherDetails]()
@@ -70,18 +70,6 @@ class DetailViewController: BaseViewController, UITableViewDelegate, UITableView
         }
     }
     
-    //MARK: TableView Delegate and DataSource Methods
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return citiesWeatherDetails.count
-    }
-    func tableView(_ tableView: UITableView , cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let weatherDetailsCell = tableView.dequeueReusableCell(withIdentifier: "CitiesWeatherDetailsCell") as! WeatherDetailsTableViewCell
-        weatherDetailsCell.cityName.text = citiesWeatherDetails[indexPath.row].cityName! as String
-        weatherDetailsCell.temperature.text = citiesWeatherDetails[indexPath.row].temperature! as String
-        return weatherDetailsCell
-    }
-    
-
     /*
     // MARK: - Navigation
 
@@ -92,4 +80,17 @@ class DetailViewController: BaseViewController, UITableViewDelegate, UITableView
     }
     */
 
+}
+
+extension DetailViewController : UITableViewDelegate, UITableViewDataSource {
+    //MARK: TableView Delegate and DataSource Methods
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return citiesWeatherDetails.count
+    }
+    func tableView(_ tableView: UITableView , cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let weatherDetailsCell = tableView.dequeueReusableCell(withIdentifier: "CitiesWeatherDetailsCell") as! WeatherDetailsTableViewCell
+        weatherDetailsCell.cityName.text = citiesWeatherDetails[indexPath.row].cityName! as String
+        weatherDetailsCell.temperature.text = citiesWeatherDetails[indexPath.row].temperature! as String
+        return weatherDetailsCell
+    }
 }

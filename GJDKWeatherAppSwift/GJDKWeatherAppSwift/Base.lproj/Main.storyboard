@@ -284,6 +284,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="u78-6C-HhI"/>
+                    <connections>
+                        <outlet property="mapView" destination="t8E-Hj-ly7" id="bnG-4b-gcS"/>
+                    </connections>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="1362.5" y="5.5"/>

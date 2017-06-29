@@ -86,6 +86,7 @@ class HomeViewController: BaseViewController {
 
 extension HomeViewController : UITextFieldDelegate {
     //MARK: Text Field Delegate Methods
+    //New Branch Created
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         if string.characters.count > 0 {
             getTemperatureButton.isEnabled = true

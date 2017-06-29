@@ -31,14 +31,18 @@ class WebServiceManager {
                 let cityNameFromWeatherInfo = weatherInfo?["name"]
                 let temperature = (weatherInfo?["main"] as! Dictionary<String, Any>)["temp"]
                 let cityId = weatherInfo?["id"]
+                let cityLatitude = (weatherInfo?["coord"] as! Dictionary<String, Any>)["lat"]
+                let cityLongitude = (weatherInfo?["coord"] as! Dictionary<String, Any>)["lon"]
                 
                 var weatherDetails = [String : Any]()
                 
                 guard cityNameFromWeatherInfo != nil else { weatherDetailsBlock(nil, ServiceFailure.CityNameNotFound); return }
                 guard temperature != nil else { weatherDetailsBlock(nil, ServiceFailure.TemperatureNotFound); return }
                 guard cityId != nil else { weatherDetailsBlock(nil, ServiceFailure.CityIdNotFound); return }
+                guard cityLatitude != nil else { weatherDetailsBlock(nil, ServiceFailure.CityLatitudeNotFound); return }
+                guard cityLongitude != nil else { weatherDetailsBlock(nil, ServiceFailure.CityLongitudeNotFound); return }
                 
-                weatherDetails = ["cityName" : cityNameFromWeatherInfo!, "temperature" : temperature!, "cityId" : cityId!]
+                weatherDetails = ["cityName" : cityNameFromWeatherInfo!, "temperature" : temperature!, "cityId" : cityId!, "latitude" : cityLatitude, "longitude" : cityLongitude]
                                 
                 weatherDetailsBlock(weatherDetails, nil)
             }

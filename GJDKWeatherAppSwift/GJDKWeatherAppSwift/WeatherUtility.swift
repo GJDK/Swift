@@ -9,6 +9,6 @@
 import Foundation
 
 enum ServiceFailure : Error {
-    case CityNameNotFound, TemperatureNotFound, CityIdNotFound, UpdateFailed
+    case CityNameNotFound, TemperatureNotFound, CityIdNotFound, CityLongitudeNotFound, CityLatitudeNotFound, UpdateFailed
 }
 

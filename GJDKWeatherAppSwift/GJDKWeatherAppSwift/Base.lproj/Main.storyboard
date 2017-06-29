@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="the-jV-Hsc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="the-jV-Hsc">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -24,7 +24,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="no3-ic-BGS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1230" y="12"/>
+            <point key="canvasLocation" x="-768.75" y="13.34"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -96,13 +96,13 @@
                         <outlet property="cityNameTextField" destination="zhp-9y-OYq" id="pTl-2t-ZW1"/>
                         <outlet property="getTemperatureButton" destination="X0j-qO-7Ye" id="zGG-7W-56P"/>
                         <outlet property="showSavedDataButton" destination="gUm-GJ-rK4" id="nOh-dT-qq3"/>
-                        <segue destination="7uW-hf-l48" kind="show" identifier="resultSegue" id="2RK-5d-C8n"/>
-                        <segue destination="JhH-YQ-nn0" kind="show" identifier="DetailViewSegue" id="kBc-Fn-Xt7"/>
+                        <segue destination="7uW-hf-l48" kind="push" identifier="resultSegue" id="2RK-5d-C8n"/>
+                        <segue destination="JhH-YQ-nn0" kind="push" identifier="DetailViewSegue" id="kBc-Fn-Xt7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-290.39999999999998" y="10.344827586206897"/>
+            <point key="canvasLocation" x="-181.5" y="11.5"/>
         </scene>
         <!--Result View Controller-->
         <scene sceneID="MfE-A2-qsj">
@@ -174,15 +174,16 @@
                             <constraint firstItem="srP-SV-NR4" firstAttribute="leading" secondItem="Dk7-9Z-gws" secondAttribute="leadingMargin" constant="40" id="qfj-f5-vwR"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="nA0-h5-ung"/>
                     <connections>
                         <outlet property="cityNameLabel" destination="f9O-bV-ccJ" id="5nG-r4-F8P"/>
                         <outlet property="temperatureLabel" destination="f9S-n3-453" id="dih-hh-Swi"/>
-                        <segue destination="JhH-YQ-nn0" kind="show" identifier="DetailSegue" id="pXe-0j-37Y"/>
+                        <segue destination="JhH-YQ-nn0" kind="push" identifier="DetailSegue" id="pXe-0j-37Y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NEu-pk-xDh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="481" y="10"/>
+            <point key="canvasLocation" x="300.625" y="11.116666666666665"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="Ypc-hr-QB5">
@@ -200,11 +201,11 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CitiesWeatherDetailsCell" id="dxP-0B-RZz" customClass="WeatherDetailsTableViewCell" customModule="GJDKWeatherAppSwift" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CitiesWeatherDetailsCell" id="dxP-0B-RZz" customClass="WeatherDetailsTableViewCell" customModule="GJDKWeatherAppSwift" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dxP-0B-RZz" id="kJV-12-6f5">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eOY-8I-og0">
@@ -214,7 +215,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Temperature" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Et0-jg-DXs">
-                                                    <rect key="frame" x="266" y="11" width="98" height="21"/>
+                                                    <rect key="frame" x="233" y="11" width="98" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -230,6 +231,7 @@
                                         <connections>
                                             <outlet property="cityName" destination="eOY-8I-og0" id="Zl5-Yb-wFc"/>
                                             <outlet property="temperature" destination="Et0-jg-DXs" id="J1X-H1-g6W"/>
+                                            <segue destination="Tfh-gQ-k25" kind="push" id="7rV-gF-ipA"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -247,17 +249,19 @@
                             <constraint firstItem="xy3-bB-fXX" firstAttribute="leading" secondItem="8CC-Xv-Xiy" secondAttribute="leading" id="csC-YN-kfb"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="4Mo-d5-Q89"/>
                     <connections>
                         <outlet property="weatherDetailsTableView" destination="xy3-bB-fXX" id="1JB-g0-YMB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Onb-mh-ila" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1204" y="5"/>
+            <point key="canvasLocation" x="752.5" y="5.5583333333333327"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="gAS-k3-JyD">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="36Q-xy-LJa" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="Tfh-gQ-k25" customClass="MapViewController" customModule="GJDKWeatherAppSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pVV-Qc-Jp5"/>
@@ -266,15 +270,31 @@
                     <view key="view" contentMode="scaleToFill" id="6j6-xZ-pM4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="t8E-Hj-ly7">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </mapView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="t8E-Hj-ly7" secondAttribute="trailing" id="IDv-52-TUe"/>
+                            <constraint firstItem="t8E-Hj-ly7" firstAttribute="leading" secondItem="6j6-xZ-pM4" secondAttribute="leading" id="LZZ-WN-PcR"/>
+                            <constraint firstAttribute="bottom" secondItem="t8E-Hj-ly7" secondAttribute="bottom" id="j4s-hM-Ktz"/>
+                            <constraint firstItem="t8E-Hj-ly7" firstAttribute="top" secondItem="6j6-xZ-pM4" secondAttribute="top" id="wMk-pI-4Yi"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="u78-6C-HhI"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="36Q-xy-LJa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2180" y="5"/>
+            <point key="canvasLocation" x="1362.5" y="5.5"/>
         </scene>
     </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4_7.fullscreen"/>
+    </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="kBc-Fn-Xt7"/>
+        <segue reference="pXe-0j-37Y"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -12,6 +12,7 @@ class DetailViewController: BaseViewController {
     
     //MARK: Members
     var citiesWeatherDetails = [WeatherDetails]()
+    var cityDetails : WeatherDetails?
     
     //MARK: IBOutlets
     @IBOutlet weak var weatherDetailsTableView: UITableView!
@@ -61,6 +62,9 @@ class DetailViewController: BaseViewController {
             weatherDetails.cityId = String(cityDetail["id"]! as! Double)
             weatherDetails.cityName = (cityDetail["name"] as! String)
             weatherDetails.temperature = String(format: "%.1f c", (cityDetail["main"] as! Dictionary<String, Any>)["temp"]! as! Double)
+            weatherDetails.latitude = (cityDetail["coord"] as! Dictionary<String, Any>)["lat"]! as! Double
+            weatherDetails.longitude = (cityDetail["coord"] as! Dictionary<String, Any>)["lon"]! as! Double
+            
             (UIApplication.shared.delegate as! AppDelegate).saveContext()
         }
         citiesWeatherDetails = (UIApplication.shared.delegate as! AppDelegate).fetchSavedData()!
@@ -70,16 +74,16 @@ class DetailViewController: BaseViewController {
         }
     }
     
-    /*
     // MARK: - Navigation
-
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "mapViewSegue" {
+            let mapViewController = segue.destination as! MapViewController
+            if let cityInfo = cityDetails {
+                mapViewController.cityDetails = cityInfo
+            }
+        }
     }
-    */
-
 }
 
 extension DetailViewController : UITableViewDelegate, UITableViewDataSource {
@@ -87,10 +91,16 @@ extension DetailViewController : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return citiesWeatherDetails.count
     }
+    
     func tableView(_ tableView: UITableView , cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let weatherDetailsCell = tableView.dequeueReusableCell(withIdentifier: "CitiesWeatherDetailsCell") as! WeatherDetailsTableViewCell
         weatherDetailsCell.cityName.text = citiesWeatherDetails[indexPath.row].cityName! as String
         weatherDetailsCell.temperature.text = citiesWeatherDetails[indexPath.row].temperature! as String
         return weatherDetailsCell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        cityDetails = citiesWeatherDetails[indexPath.row]
+        performSegue(withIdentifier: "mapViewSegue", sender: self)
     }
 }

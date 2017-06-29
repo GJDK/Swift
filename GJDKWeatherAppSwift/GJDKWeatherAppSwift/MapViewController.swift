@@ -10,6 +10,9 @@ import UIKit
 import MapKit
 
 class MapViewController: BaseViewController {
+    
+    //MARK: Members
+    var cityDetails : WeatherDetails!
 
     //MARK: IBOutlets
     @IBOutlet weak var mapView: MKMapView!
@@ -19,9 +22,9 @@ class MapViewController: BaseViewController {
 
         // Do any additional setup after loading the view.
         let annotations = MKPointAnnotation()
-        let centerCoordinate = CLLocationCoordinate2D(latitude: 9.93, longitude: 78.12)
+        let centerCoordinate = CLLocationCoordinate2D(latitude: cityDetails.latitude, longitude: cityDetails.longitude)
         annotations.coordinate = centerCoordinate
-        annotations.title = "Madurai"
+        annotations.title = cityDetails.cityName
         mapView.addAnnotation(annotations)
     }
 

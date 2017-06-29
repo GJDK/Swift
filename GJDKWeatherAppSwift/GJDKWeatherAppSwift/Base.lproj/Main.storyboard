@@ -231,7 +231,6 @@
                                         <connections>
                                             <outlet property="cityName" destination="eOY-8I-og0" id="Zl5-Yb-wFc"/>
                                             <outlet property="temperature" destination="Et0-jg-DXs" id="J1X-H1-g6W"/>
-                                            <segue destination="Tfh-gQ-k25" kind="push" id="7rV-gF-ipA"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -252,6 +251,7 @@
                     <navigationItem key="navigationItem" id="4Mo-d5-Q89"/>
                     <connections>
                         <outlet property="weatherDetailsTableView" destination="xy3-bB-fXX" id="1JB-g0-YMB"/>
+                        <segue destination="Tfh-gQ-k25" kind="push" identifier="mapViewSegue" id="7bE-iC-2vs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Onb-mh-ila" userLabel="First Responder" sceneMemberID="firstResponder"/>

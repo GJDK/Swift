@@ -33,7 +33,7 @@ class MapViewController: BaseViewController {
     //MARK: Custom methods
     func zoomToTheSelectedCity() {
         let centerCoordinate = CLLocationCoordinate2D(latitude: cityDetails.latitude, longitude: cityDetails.longitude)
-        let coordinateSpan = MKCoordinateSpan(latitudeDelta: 1, longitudeDelta: 1)
+        let coordinateSpan = MKCoordinateSpan(latitudeDelta: 0.75, longitudeDelta: 0.75)
         let region = MKCoordinateRegion(center: centerCoordinate, span: coordinateSpan)
         mapView.setRegion(region, animated: true)
     }
@@ -45,7 +45,6 @@ class MapViewController: BaseViewController {
         annotations.title = cityDetails.cityName
         mapView.addAnnotation(annotations)
     }
-    
 
     /*
     // MARK: - Navigation
@@ -56,5 +55,26 @@ class MapViewController: BaseViewController {
         // Pass the selected object to the new view controller.
     }
     */
+}
 
+extension MapViewController : MKMapViewDelegate {
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        guard !(annotation is MKUserLocation) else {
+            return nil
+        }
+        
+        let annotationIdentifier = "AnnotationIdentifier"
+        var annotationView : MKAnnotationView?
+        if let dequeuedAnnotationView = mapView.dequeueReusableAnnotationView(withIdentifier: annotationIdentifier) {
+            annotationView = dequeuedAnnotationView
+            annotationView?.annotation = annotation
+        } else {
+            annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: annotationIdentifier)
+        }
+        if let annotationView = annotationView {
+            annotationView.canShowCallout = true
+            annotationView.image = UIImage(named: "LighteningIcon")
+        }
+        return annotationView
+    }
 }

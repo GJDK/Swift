@@ -42,7 +42,7 @@ class WebServiceManager {
                 guard cityLatitude != nil else { weatherDetailsBlock(nil, ServiceFailure.CityLatitudeNotFound); return }
                 guard cityLongitude != nil else { weatherDetailsBlock(nil, ServiceFailure.CityLongitudeNotFound); return }
                 
-                weatherDetails = ["cityName" : cityNameFromWeatherInfo!, "temperature" : temperature!, "cityId" : cityId!, "latitude" : cityLatitude, "longitude" : cityLongitude]
+                weatherDetails = ["cityName" : cityNameFromWeatherInfo!, "temperature" : temperature!, "cityId" : cityId!, "latitude" : cityLatitude!, "longitude" : cityLongitude!]
                                 
                 weatherDetailsBlock(weatherDetails, nil)
             }

@@ -10,6 +10,10 @@ import UIKit
 
 class WeatherDetailsTableViewCell: UITableViewCell {
     
+    //MARK: Members
+    var weatherDetails : WeatherDetails?
+    var seeInMapDelegate : SeeInMapActionDelegate?
+    
     //MARK: IBOutlets
     @IBOutlet weak var cityName: UILabel!
     @IBOutlet weak var temperature: UILabel!
@@ -24,5 +28,17 @@ class WeatherDetailsTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    //MARK: CustomMethods
+    func weatherDetailsCellDetails(detailViewController : DetailViewController, weatherDetails : WeatherDetails, cityName : String, temperature : String) -> Void {
+        seeInMapDelegate = detailViewController
+        self.weatherDetails = weatherDetails
+        self.cityName.text = cityName
+        self.temperature.text = temperature
+    }
 
+    //MARK: IBAction Methods
+    @IBAction func seeInMapButtonTapped(_ sender: Any) {
+        seeInMapDelegate?.triggerSeeInMapAction(weatherDetails: weatherDetails!)
+    }
 }

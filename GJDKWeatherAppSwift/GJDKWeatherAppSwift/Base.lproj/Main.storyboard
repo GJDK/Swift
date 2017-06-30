@@ -209,23 +209,33 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eOY-8I-og0">
-                                                    <rect key="frame" x="13" y="11" width="30.5" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <rect key="frame" x="10" y="3" width="26" height="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Temperature" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Et0-jg-DXs">
-                                                    <rect key="frame" x="233" y="11" width="98" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <rect key="frame" x="10" y="22" width="72" height="15"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mul-IM-9vi">
+                                                    <rect key="frame" x="264" y="8" width="68" height="28"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <state key="normal" title="See In Map"/>
+                                                    <connections>
+                                                        <action selector="seeInMapButtonTapped:" destination="dxP-0B-RZz" eventType="touchUpInside" id="KL9-52-zG2"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailingMargin" secondItem="Et0-jg-DXs" secondAttribute="trailing" constant="3" id="Jae-Xs-Uhc"/>
-                                                <constraint firstItem="eOY-8I-og0" firstAttribute="leading" secondItem="kJV-12-6f5" secondAttribute="leadingMargin" constant="5" id="o6x-gn-xUj"/>
-                                                <constraint firstItem="eOY-8I-og0" firstAttribute="centerY" secondItem="kJV-12-6f5" secondAttribute="centerY" id="pPb-lV-ET2"/>
-                                                <constraint firstItem="Et0-jg-DXs" firstAttribute="centerY" secondItem="kJV-12-6f5" secondAttribute="centerY" id="rwn-GN-1Jx"/>
+                                                <constraint firstAttribute="trailing" secondItem="mul-IM-9vi" secondAttribute="trailing" constant="10" id="AWf-rS-S9i"/>
+                                                <constraint firstItem="Et0-jg-DXs" firstAttribute="top" secondItem="eOY-8I-og0" secondAttribute="bottom" constant="2" id="Mqs-MZ-G8g"/>
+                                                <constraint firstItem="Et0-jg-DXs" firstAttribute="leading" secondItem="eOY-8I-og0" secondAttribute="leading" id="V5n-9e-zzC"/>
+                                                <constraint firstItem="eOY-8I-og0" firstAttribute="leading" secondItem="kJV-12-6f5" secondAttribute="leading" constant="10" id="vxR-gd-Stx"/>
+                                                <constraint firstItem="eOY-8I-og0" firstAttribute="top" secondItem="kJV-12-6f5" secondAttribute="top" constant="3" id="wQD-sA-j5Q"/>
+                                                <constraint firstItem="mul-IM-9vi" firstAttribute="centerY" secondItem="kJV-12-6f5" secondAttribute="centerY" id="zMm-eu-vE2"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>

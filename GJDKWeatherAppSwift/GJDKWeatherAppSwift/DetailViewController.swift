@@ -94,13 +94,17 @@ extension DetailViewController : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView , cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let weatherDetailsCell = tableView.dequeueReusableCell(withIdentifier: "CitiesWeatherDetailsCell") as! WeatherDetailsTableViewCell
-        weatherDetailsCell.cityName.text = citiesWeatherDetails[indexPath.row].cityName! as String
-        weatherDetailsCell.temperature.text = citiesWeatherDetails[indexPath.row].temperature! as String
+        
+        weatherDetailsCell.weatherDetailsCellDetails(detailViewController: self, weatherDetails: citiesWeatherDetails[indexPath.row], cityName: citiesWeatherDetails[indexPath.row].cityName! as String, temperature: citiesWeatherDetails[indexPath.row].temperature! as String)
+        
         return weatherDetailsCell
     }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        cityDetails = citiesWeatherDetails[indexPath.row]
+}
+
+extension DetailViewController : SeeInMapActionDelegate {
+    //MARK: SeeInMapActionDelegate Methods
+    func triggerSeeInMapAction(weatherDetails: WeatherDetails) {
+        cityDetails = weatherDetails
         performSegue(withIdentifier: "mapViewSegue", sender: self)
     }
 }

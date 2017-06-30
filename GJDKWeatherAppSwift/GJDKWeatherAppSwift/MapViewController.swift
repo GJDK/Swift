@@ -21,16 +21,29 @@ class MapViewController: BaseViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        let annotations = MKPointAnnotation()
-        let centerCoordinate = CLLocationCoordinate2D(latitude: cityDetails.latitude, longitude: cityDetails.longitude)
-        annotations.coordinate = centerCoordinate
-        annotations.title = cityDetails.cityName
-        mapView.addAnnotation(annotations)
+        zoomToTheSelectedCity()
+        addPinToTheLocation()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    //MARK: Custom methods
+    func zoomToTheSelectedCity() {
+        let centerCoordinate = CLLocationCoordinate2D(latitude: cityDetails.latitude, longitude: cityDetails.longitude)
+        let coordinateSpan = MKCoordinateSpan(latitudeDelta: 1, longitudeDelta: 1)
+        let region = MKCoordinateRegion(center: centerCoordinate, span: coordinateSpan)
+        mapView.setRegion(region, animated: true)
+    }
+    
+    func addPinToTheLocation() {
+        let annotations = MKPointAnnotation()
+        let centerCoordinate = CLLocationCoordinate2D(latitude: cityDetails.latitude, longitude: cityDetails.longitude)
+        annotations.coordinate = centerCoordinate
+        annotations.title = cityDetails.cityName
+        mapView.addAnnotation(annotations)
     }
     
 

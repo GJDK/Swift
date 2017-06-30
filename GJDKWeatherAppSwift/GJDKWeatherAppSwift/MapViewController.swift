@@ -42,7 +42,8 @@ class MapViewController: BaseViewController {
         let annotations = MKPointAnnotation()
         let centerCoordinate = CLLocationCoordinate2D(latitude: cityDetails.latitude, longitude: cityDetails.longitude)
         annotations.coordinate = centerCoordinate
-        annotations.title = cityDetails.cityName
+        annotations.title = cityDetails.cityName!
+        annotations.subtitle = cityDetails.temperature!
         mapView.addAnnotation(annotations)
     }
 

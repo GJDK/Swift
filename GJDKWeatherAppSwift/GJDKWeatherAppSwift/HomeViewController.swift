@@ -53,11 +53,11 @@ class HomeViewController: BaseViewController {
     @IBAction func getTemperatureButtonTapped(_ sender: Any) {
         cityNameTextField.resignFirstResponder()
         let webServiceManager = WebServiceManager.sharedWebServiceManagerInstance
-        webServiceManager.getWeatherDetails(forTheCity: cityNameTextField.text!) { (WeatherInfo, error) in
-            if let weatherDict = WeatherInfo {
-                self.intiateSegue(weatherResults: weatherDict)
+        webServiceManager.getWeatherDetails(forTheCity: cityNameTextField.text!) {
+            if $0 != nil {
+                self.intiateSegue(weatherResults: $0!)
             } else {
-                print(error!) 
+                print($1!)
             }
         }
     }

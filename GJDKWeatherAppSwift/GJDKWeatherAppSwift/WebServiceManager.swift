@@ -8,14 +8,17 @@
 
 import Foundation
 
+//TYPE ALIAS
+typealias WeatherDetailsBlock = (_ result : Dictionary<String, Any>?, _ error : Error?) -> Void
+
 let BaseUrl = "http://api.openweathermap.org/data/2.5/weather?q=%@&appid=8726c36d19324fd1f9e2cf1d359a7760"
 let updateCityDetailsUrl = "http://api.openweathermap.org/data/2.5/group?id=%@&units=metric&appid=8726c36d19324fd1f9e2cf1d359a7760"
 
 class WebServiceManager {
     static let sharedWebServiceManagerInstance = WebServiceManager()
     
-    func getWeatherDetails(forTheCity cityName : String, withCompletionHandler weatherDetailsBlock : @escaping (_ result : Dictionary<String, Any>?, _ error : Error?) -> Void) -> Void {
-        
+    func getWeatherDetails(forTheCity cityName : String, withCompletionHandler weatherDetailsBlock : @escaping WeatherDetailsBlock) -> Void {
+    
         let urlSessionConfiguration = URLSessionConfiguration.default
         let session = URLSession(configuration: urlSessionConfiguration)
         var url : URL?
@@ -46,7 +49,7 @@ class WebServiceManager {
         dataTask.resume()
     }
     
-    func refreshSavedCityDetails(_ cities:[String], withCompletionHandler refreshedWeatherDeatilsBlock: @escaping (_ result : Dictionary<String, Any>?, _ error : Error?) -> Void ) -> Void {
+    func refreshSavedCityDetails(_ cities:[String], withCompletionHandler refreshedWeatherDeatilsBlock: @escaping WeatherDetailsBlock) -> Void {
         let urlSessionConfiguration = URLSessionConfiguration.default
         let session = URLSession(configuration: urlSessionConfiguration)
         var url : URL?

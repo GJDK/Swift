@@ -16,7 +16,6 @@
 		718352251EF92A75009F77A5 /* WebServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718352241EF92A75009F77A5 /* WebServiceManager.swift */; };
 		718352291EF9441D009F77A5 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718352281EF9441D009F77A5 /* ResultViewController.swift */; };
 		71B716DB1EFB8BD90050361A /* WeatherDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B716DA1EFB8BD90050361A /* WeatherDetailsTableViewCell.swift */; };
-		71B716E01EFD2EBA0050361A /* LaunchImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 71B716DF1EFD2EBA0050361A /* LaunchImage.png */; };
 		71C264971EFA3DAA00D81810 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C264961EFA3DAA00D81810 /* BaseViewController.swift */; };
 		71C2649A1EFA6BBC00D81810 /* WeatherUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C264991EFA6BBC00D81810 /* WeatherUtility.swift */; };
 		71C264A21EFA867900D81810 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C264A11EFA867900D81810 /* DetailViewController.swift */; };
@@ -35,7 +34,6 @@
 		718352241EF92A75009F77A5 /* WebServiceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebServiceManager.swift; sourceTree = "<group>"; };
 		718352281EF9441D009F77A5 /* ResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		71B716DA1EFB8BD90050361A /* WeatherDetailsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherDetailsTableViewCell.swift; sourceTree = "<group>"; };
-		71B716DF1EFD2EBA0050361A /* LaunchImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = LaunchImage.png; path = ../../../../../../Desktop/ImageRes/LaunchImage.png; sourceTree = "<group>"; };
 		71C264961EFA3DAA00D81810 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		71C264991EFA6BBC00D81810 /* WeatherUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherUtility.swift; sourceTree = "<group>"; };
 		71C264A11EFA867900D81810 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
@@ -83,7 +81,6 @@
 				2652A6091EEBAF5A00BEBB97 /* LaunchScreen.storyboard */,
 				2652A60C1EEBAF5A00BEBB97 /* Info.plist */,
 				2652A6041EEBAF5A00BEBB97 /* GJDKWeatherAppSwift.xcdatamodeld */,
-				71B716DF1EFD2EBA0050361A /* LaunchImage.png */,
 			);
 			path = GJDKWeatherAppSwift;
 			sourceTree = "<group>";
@@ -187,6 +184,7 @@
 				TargetAttributes = {
 					2652A5F91EEBAF5A00BEBB97 = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = HZHJ2M9393;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -214,7 +212,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				71B716E01EFD2EBA0050361A /* LaunchImage.png in Resources */,
 				2652A60B1EEBAF5A00BEBB97 /* LaunchScreen.storyboard in Resources */,
 				2652A6081EEBAF5A00BEBB97 /* Assets.xcassets in Resources */,
 				2652A6031EEBAF5A00BEBB97 /* Main.storyboard in Resources */,
@@ -360,10 +357,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = HZHJ2M9393;
 				INFOPLIST_FILE = GJDKWeatherAppSwift/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.prokarma.GJDKWeatherAppSwift;
+				PRODUCT_BUNDLE_IDENTIFIER = com.prokarma.GJDKWeatherAppSwift1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -373,10 +371,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = HZHJ2M9393;
 				INFOPLIST_FILE = GJDKWeatherAppSwift/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.prokarma.GJDKWeatherAppSwift;
+				PRODUCT_BUNDLE_IDENTIFIER = com.prokarma.GJDKWeatherAppSwift1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};

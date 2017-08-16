@@ -184,7 +184,7 @@
 				TargetAttributes = {
 					2652A5F91EEBAF5A00BEBB97 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = AWFV756KAF;
+						DevelopmentTeam = 97VQZMNKN8;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -357,11 +357,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = AWFV756KAF;
+				DEVELOPMENT_TEAM = 97VQZMNKN8;
 				INFOPLIST_FILE = GJDKWeatherAppSwift/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.prokarma.GJDKWeatherAppSwift;
+				PRODUCT_BUNDLE_IDENTIFIER = com.prokarma.GJDKWeatherAppSwift2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -371,11 +371,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = AWFV756KAF;
+				DEVELOPMENT_TEAM = 97VQZMNKN8;
 				INFOPLIST_FILE = GJDKWeatherAppSwift/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.prokarma.GJDKWeatherAppSwift;
+				PRODUCT_BUNDLE_IDENTIFIER = com.prokarma.GJDKWeatherAppSwift2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};

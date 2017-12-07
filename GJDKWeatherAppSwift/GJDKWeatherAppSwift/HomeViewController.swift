@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 class HomeViewController: BaseViewController {
     
@@ -16,9 +17,14 @@ class HomeViewController: BaseViewController {
     @IBOutlet weak var showSavedDataButton: UIButton!
     
     @IBOutlet weak var cityNameTextField: UITextField!
-    
+        
     //MARK:Members
     var weatherDeatils : Dictionary<String, Any>?
+    
+    var locationManager : CLLocationManager!
+    
+    var currentLocation : CLLocation?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +33,7 @@ class HomeViewController: BaseViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        determineCurrentLocation()
         let weatherDetails = (UIApplication.shared.delegate as! AppDelegate).fetchSavedData()
         if let weatherInfo = weatherDetails {
             if weatherInfo.count > 0 {
@@ -41,6 +48,16 @@ class HomeViewController: BaseViewController {
     }
     
     //MARK: Custom Methods
+    
+    func determineCurrentLocation() -> Void {
+        locationManager = CLLocationManager()
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestWhenInUseAuthorization()
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.startUpdatingLocation()
+        }
+    }
     func intiateSegue(weatherResults: Dictionary<String, Any>) -> Void {
         weatherDeatils = weatherResults
         let operationQueue = OperationQueue.main
@@ -66,6 +83,23 @@ class HomeViewController: BaseViewController {
         performSegue(withIdentifier: "DetailViewSegue", sender: self)
     }
     
+    @IBAction func currentCityTemperatureButtonTapped(_ sender: Any) {
+        determineCurrentLocation()
+        if let currentCityLocation = currentLocation {
+            //Call the service passing the location lat and long
+           let webServiceManager = WebServiceManager.sharedWebServiceManagerInstance
+            webServiceManager.getWeatherDetails(forTheCityWithLattitude: currentCityLocation.coordinate.latitude.description, andLongitude: currentCityLocation.coordinate.longitude.description) {
+                if $0 != nil {
+                    self.intiateSegue(weatherResults: $0!);
+                } else {
+                    print($1!)
+                }
+            }
+        } else {
+            print("Current Location Co-ordiantes not available")
+        }
+    }
+    
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "resultSegue" {
@@ -84,7 +118,7 @@ class HomeViewController: BaseViewController {
     }
 }
 
-extension HomeViewController : UITextFieldDelegate {
+extension HomeViewController : UITextFieldDelegate, CLLocationManagerDelegate {
     //MARK: Text Field Delegate Methods
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         if string.characters.count > 0 {
@@ -93,5 +127,17 @@ extension HomeViewController : UITextFieldDelegate {
             getTemperatureButton.isEnabled = false
         }
         return true
+    }
+    
+    //MARK: Location Manager Delegate Methods
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        currentLocation = locations[0] as CLLocation
+        manager.stopUpdatingLocation()
+        print("Current Location Latitude is \(currentLocation?.coordinate.latitude)")
+        print("Current Location Longitude is \(currentLocation?.coordinate.longitude)")
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print("Failed due to error \(error)")
     }
 }

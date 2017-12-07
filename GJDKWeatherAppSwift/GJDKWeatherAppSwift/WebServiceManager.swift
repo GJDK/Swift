@@ -7,15 +7,48 @@
 //
 
 import Foundation
+import CoreLocation
 
 //TYPE ALIAS
 typealias WeatherDetailsBlock = (_ result : Dictionary<String, Any>?, _ error : Error?) -> Void
 
+let currentLocationUrl = "http://api.openweathermap.org/data/2.5/weather?lat=%@&lon=%@&appid=8726c36d19324fd1f9e2cf1d359a7760"
 let BaseUrl = "http://api.openweathermap.org/data/2.5/weather?q=%@&appid=8726c36d19324fd1f9e2cf1d359a7760"
 let updateCityDetailsUrl = "http://api.openweathermap.org/data/2.5/group?id=%@&units=metric&appid=8726c36d19324fd1f9e2cf1d359a7760"
 
 class WebServiceManager {
     static let sharedWebServiceManagerInstance = WebServiceManager()
+    
+    func getWeatherDetails(forTheCityWithLattitude lat : String, andLongitude long : String, withCompletionHandler weatherDetailsBlock : @escaping WeatherDetailsBlock) -> Void {
+        let urlSessionConfiguration = URLSessionConfiguration.default
+        let session = URLSession(configuration: urlSessionConfiguration)
+        var url : URL?
+        let urlString = String(format: currentLocationUrl, lat, long)
+        url = URL.init(string: urlString)
+        let dataTask = session.dataTask(with: url!) { (data, response, error) in
+            if error != nil {
+                print(error!.localizedDescription)
+            } else {
+                let weatherInfo = try? JSONSerialization.jsonObject(with: data!, options: []) as! Dictionary<String, Any>
+                print(weatherInfo!)
+                
+                let cityNameFromWeatherInfo = weatherInfo?["name"]
+                let temperature = (weatherInfo?["main"] as! Dictionary<String, Any>)["temp"]
+                let cityId = weatherInfo?["id"]
+                
+                var weatherDetails = [String : Any]()
+                
+                guard cityNameFromWeatherInfo != nil else { weatherDetailsBlock(nil, ServiceFailure.CityNameNotFound); return }
+                guard temperature != nil else { weatherDetailsBlock(nil, ServiceFailure.TemperatureNotFound); return }
+                guard cityId != nil else { weatherDetailsBlock(nil, ServiceFailure.CityIdNotFound); return }
+                
+                weatherDetails = ["cityName" : cityNameFromWeatherInfo!, "temperature" : temperature!, "cityId" : cityId!]
+                
+                weatherDetailsBlock(weatherDetails, nil)
+            }
+        }
+        dataTask.resume()
+    }
     
     func getWeatherDetails(forTheCity cityName : String, withCompletionHandler weatherDetailsBlock : @escaping WeatherDetailsBlock) -> Void {
     

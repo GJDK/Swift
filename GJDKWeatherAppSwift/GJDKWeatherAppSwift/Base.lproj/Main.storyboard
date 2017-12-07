@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="the-jV-Hsc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="the-jV-Hsc">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -15,7 +15,7 @@
             <objects>
                 <navigationController id="the-jV-Hsc" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="qEJ-zE-gxX">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -39,9 +39,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter City Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fac-sZ-1VX">
-                                <rect key="frame" x="109.5" y="116" width="156" height="21"/>
+                                <rect key="frame" x="119.5" y="116" width="136.5" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="156" id="XBQ-5z-sX3"/>
                                     <constraint firstAttribute="height" constant="21" id="lrK-mS-BaR"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
@@ -78,13 +77,22 @@
                                     <action selector="showSavedDataButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rA5-GO-IV6"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HQS-2m-AVm">
+                                <rect key="frame" x="100" y="325" width="175" height="30"/>
+                                <state key="normal" title="Current City Temperature"/>
+                                <connections>
+                                    <action selector="currentCityTemperatureButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wXT-Ws-55o"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="gUm-GJ-rK4" firstAttribute="top" secondItem="X0j-qO-7Ye" secondAttribute="bottom" constant="20" id="03q-rJ-3xA"/>
+                            <constraint firstItem="HQS-2m-AVm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="24a-xS-EWQ"/>
                             <constraint firstItem="zhp-9y-OYq" firstAttribute="top" secondItem="Fac-sZ-1VX" secondAttribute="bottom" constant="8" id="3RT-D6-A4E"/>
                             <constraint firstItem="Fac-sZ-1VX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5Bg-Bd-vfK"/>
                             <constraint firstItem="X0j-qO-7Ye" firstAttribute="top" secondItem="zhp-9y-OYq" secondAttribute="bottom" constant="50" id="PY0-jv-ovy"/>
+                            <constraint firstItem="HQS-2m-AVm" firstAttribute="top" secondItem="gUm-GJ-rK4" secondAttribute="bottom" constant="20" id="R6R-BN-pcE"/>
                             <constraint firstItem="X0j-qO-7Ye" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bwk-0Y-BYB"/>
                             <constraint firstItem="gUm-GJ-rK4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="iBI-Ro-AaD"/>
                             <constraint firstItem="Fac-sZ-1VX" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="52" id="jaD-q6-kIg"/>
@@ -204,17 +212,17 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dxP-0B-RZz" id="kJV-12-6f5">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eOY-8I-og0">
-                                                    <rect key="frame" x="13" y="11" width="30.5" height="21"/>
+                                                    <rect key="frame" x="20" y="11" width="30.5" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Temperature" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Et0-jg-DXs">
-                                                    <rect key="frame" x="266" y="11" width="98" height="21"/>
+                                                    <rect key="frame" x="259" y="11" width="98" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
